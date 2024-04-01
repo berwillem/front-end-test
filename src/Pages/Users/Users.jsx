@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Users = () => {
   const [users, setUsers] = useState([]);
   const token = localStorage.getItem("token");
@@ -21,7 +22,9 @@ const Users = () => {
   return (
     <>
       {users.map((user) => (
-        <li>{user.username}</li>
+        <Link to={`/user/${user._id}`}>
+          <li>{user.username}</li>
+        </Link>
       ))}
     </>
   );

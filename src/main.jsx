@@ -7,6 +7,8 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Notfound from "./Pages/Notfound/Notfound";
 import Users from "./Pages/Users/Users";
+import User from "./Pages/User/User";
+import FileUpload from "./Pages/FileUpload/FileUpload";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
   {
     path: "/users",
     element: <Users />,
+  },
+  {
+    path: "/user/:id",
+    element: <User />,
+  },
+  {
+    path: "/upload",
+    element: <FileUpload />,
   },
   {
     path: "*",
